@@ -1,0 +1,172 @@
+:root {
+  font-size: 16px;
+  font-family: 'Open Sans';
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --transition-speed: 600ms;
+}
+
+body {
+  color: black;
+  background-color: rgb(242, 244, 248);
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, sans-serif	
+}
+
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+  .navbar:hover .link-text{
+    display: none;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) { */
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  .navbar:hover .link-text {
+    display: inline;
+  }
+
+  .navbar:hover .logo svg
+  {
+    margin-left: 11rem;
+  }
+
+  .navbar:hover .logo-text
+  {
+    left: 0px;
+  }
+}
+
+/* END OF NAVBAR CSS */
+/* Add a black background color to the top navigation */
+/* Add a black background color to the top navigation */
+.topnav {
+	background-color: rgb(88, 82, 116);
+	overflow: hidden;
+	align-items:left;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav p {
+	float: right;
+	color: #f2f2f2;
+	text-align: center;
+	padding-right: 30px;
+	text-decoration: none;
+	font-size: 17px;
+  }
+
+  
+.dashboard{
+
+  position: relative;
+  margin-left: 6rem;
+  margin-top: 3em;
+  width: auto;
+  height: auto;
+  /* border: 3px solid #73AD21; */
+  padding: 10px;
+
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 60%);
+  grid-template-rows: repeat(auto-fill, 1fr);
+  grid-gap: 1em;
+  
+  align-items: stretch; 
+
+}
+
+.dashboard > div{
+  display: flex;
+  background-color:white;
+  padding: 1em;
+  border: 0px solid #141418;
+  /* min-width: 40%; */
+  max-width: 90%;
+  height: auto;
+}
+
+
+
+/* h2{
+    position: relative;
+    text-align: left;
+}
+
+h4{
+  margin: 0.5rem;
+  font-size: large;
+} */
+
+
+table {
+	border: 0px solid #1C6EA4;
+	background-color: #c7c8f7;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+  }
+  table td, table th {
+	border: 0px solid #AAAAAA;
+	padding: 3px 2px;
+	padding-left:5px;
+  }
+  table tbody td {
+	font-size: 13px;
+  }
+  table tr:nth-child(even) {
+	background: #e3ecff;
+  }
+  table thead {
+	background: #1D1048;
+	border-bottom: 2px solid #444444;
+	
+  }
+  table thead th {
+	font-size: 14px;
+  /* padding-left:5px; */
+  width: auto;
+  text-align: center;
+	font-weight: bold;
+	color: #FFFFFF;
+	border-left: 0px solid #D0E4F5;
+  }
+  table thead th:first-child {
+	border-left: none;
+  }

@@ -1,0 +1,68 @@
+import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
+import axios from 'axios';
+import "./watchlist.css"
+import Navbar from "../NavBar/navbar.component";
+import Watchlist from "./watchlist.backup";
+
+export default class WatchlistPage extends Component{
+
+
+    constructor(props){
+        super(props);
+        // this.onRemove = this.onRemove.bind(this);
+        // this.oncreate = this.onCreate.bind(this);
+        // this.onSelect = this.onSelect.bind(this);
+
+    
+        this.state = {
+            userID: "5f890ebbbb89e66e947f5652",
+            Watchlists: [],
+            stockID: 'IBM',
+            esParameter: "",
+            esAmount: "15",
+
+            editAmount :null,
+            editStockID :null,
+            editSubID :null
+
+        }
+    }
+
+
+    componentDidMount() {
+        console.log('reloaded');
+        axios.get('http://localhost:5000/users/' + this.state.userID + '/watchlist/add') //dummy user ID in place
+            .then(response => {
+
+                this.setState({
+                    eventSubscriptions: response.data,
+                })
+                
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+    }
+
+
+
+    render(){
+        return(
+
+            <div>
+                <Navbar/>
+                <h2>Your Watchlists</h2>
+                <div id = "select">
+                    <label for = "lists">Select</label>
+                    <select name = "lists"/>
+                <button id = "create">Create List</button></div>
+                <div className = "list-container">
+                    
+                    <Watchlist/>
+                  
+                </div>
+            </div>
+        );
+    }
+}

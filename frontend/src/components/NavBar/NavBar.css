@@ -1,0 +1,184 @@
+/* START OF NAVBAR CSS */
+
+  body::-webkit-scrollbar{
+    width: 0.55rem;
+  }
+
+  body::-webkit-scrollbar-track{
+    background: #1e1e24;
+  }
+  body::-webkit-scrollbar-thumb{
+    background: #b6b6b6;
+  }
+  
+  
+  main{
+    margin-left: 5rem;
+    padding: 1rem;
+  
+  }
+  
+  
+  .navbar{
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background: var(--bg-primary);
+    /* margin-top: 0; */
+    transition: 200ms ease ;
+    z-index: 5;  
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .nav-item {
+    width: 100%;
+    
+  }
+  
+  .nav-item:last-child {
+    margin-top: auto;
+  }
+  
+  .nav-link{
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: var(--transition-speed);
+  }
+  
+  .navbar:hover{
+    width: 16rem;
+    z-index: 5;
+  }
+  
+  .link-text {
+    display: none;
+    margin-left: 1rem;
+  }
+  
+  .navbar:hover .link-text{
+    display: inline;
+    margin-left: 5rem;
+  }
+  
+  
+  .nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+  }
+  
+  
+  .nav-link svg {
+    width: 2rem;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+  }
+  
+  .nav-link i {
+    position: fixed;
+    font-size: 2rem;
+    margin: 0 1.5rem;
+    color: #c4f5e4 ;
+  }
+  
+  
+  .logo {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    font-size: 1.5rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+  }
+  
+  .logo i {
+    position: relative;
+    transform: rotate(0deg);
+    transition: var(--transition-speed);
+  }
+  
+  .logo-text
+  {
+    display: inline;
+    position: absolute;
+    margin-left: 1rem;
+    left: -999px;
+    transition: var(--transition-speed);
+  }
+  
+  .navbar:hover .logo i {
+    left: 10rem;
+    transform: rotate(-180deg);
+    transition: var(--transition-speed);
+  }
+  
+  /* Small screens */
+  @media only screen and (max-width: 600px) {
+    .navbar {
+      bottom: 0;
+      width: 100%;
+      height: 5rem;
+    }
+  
+    .logo {
+      display: none;
+    }
+  
+    .navbar-nav {
+      flex-direction: row;
+    }
+    .navbar:hover .link-text{
+      display: none;
+    }
+  
+    .nav-link {
+      justify-content: center;
+    }
+  
+    main {
+      margin: 0;
+    }
+  }
+  
+  /* Large screens */
+  @media only screen and (min-width: 600px) {
+    .navbar {
+      top: 0;
+      width: 5rem;
+      height: 100vh;
+    }
+  
+    .navbar:hover {
+      width: 16rem;
+    }
+  
+    .navbar:hover .link-text {
+      display: inline;
+    }
+  
+    .navbar:hover .logo svg
+    {
+      margin-left: 11rem;
+    }
+  
+    .navbar:hover .logo-text
+    {
+      left: 0px;
+    }
+  }
+  
+  /* END OF NAVBAR CSS */
